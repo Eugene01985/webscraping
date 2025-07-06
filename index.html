@@ -33,32 +33,16 @@
             color: white;
             padding: 2rem;
             text-align: center;
-            position: relative;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            opacity: 0.3;
         }
         
         h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
         }
         
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
         }
         
         .course-info {
@@ -102,6 +86,7 @@
             padding: 1rem;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         
         .toc-item:hover {
@@ -221,6 +206,41 @@
             border-radius: 5px;
         }
         
+        /* Navigation styles */
+        .chapter-nav {
+            background: #34495e;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .chapter-nav h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            background: #2980b9;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -233,6 +253,11 @@
             .chapter, .algorithms-section {
                 margin: 1rem;
                 padding: 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -251,6 +276,23 @@
             <strong>Institution:</strong> Adventist University of Central Africa
         </div>
         
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <h3>📖 Quick Chapter Navigation</h3>
+            <div class="nav-links">
+                <a href="#chapter1" class="nav-link">Chapter 1: Introduction</a>
+                <a href="#chapter2" class="nav-link">Chapter 2: Linear Regression</a>
+                <a href="#chapter3" class="nav-link">Chapter 3: Classification</a>
+                <a href="#chapter4" class="nav-link">Chapter 4: Resampling</a>
+                <a href="#chapter5" class="nav-link">Chapter 5: Regularization</a>
+                <a href="#chapter6" class="nav-link">Chapter 6: Trees</a>
+                <a href="#chapter7" class="nav-link">Chapter 7: SVM</a>
+                <a href="#chapter8" class="nav-link">Chapter 8: Deep Learning</a>
+                <a href="#chapter9" class="nav-link">Chapter 9: Unsupervised</a>
+                <a href="#chapter10" class="nav-link">Chapter 10: Text Mining</a>
+            </div>
+        </div>
+        
         <section class="overview">
             <h2>📖 Book Overview</h2>
             <p>
@@ -264,41 +306,41 @@
         <section class="toc">
             <h2>📋 Table of Contents</h2>
             <ul class="toc-list">
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter1').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 1:</strong> Introduction
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter2').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 2:</strong> Linear Regression
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter3').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 3:</strong> Classification
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter4').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 4:</strong> Resampling Methods
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter5').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 5:</strong> Linear Model Selection and Regularization
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter6').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 6:</strong> Tree-based Methods
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter7').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 7:</strong> Support Vector Machine
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter8').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 8:</strong> Deep Learning
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter9').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 9:</strong> Unsupervised Learning
                 </li>
-                <li class="toc-item">
+                <li class="toc-item" onclick="document.getElementById('chapter10').scrollIntoView({behavior: 'smooth'})">
                     <strong>Chapter 10:</strong> Text Mining
                 </li>
             </ul>
         </section>
         
         <main>
-            <article class="chapter">
+            <article class="chapter" id="chapter1">
                 <span class="chapter-number">Chapter 1</span>
                 <h2>🚀 Introduction</h2>
                 <p>
@@ -321,12 +363,12 @@
                     <strong>Key Takeaway:</strong> Statistical learning provides a framework for understanding relationships in data, with applications ranging from prediction to inference. The chapter emphasizes the importance of balancing model complexity with generalization ability.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 1 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter1_introduction.ipynb" class="github-link">
+                    📓 View Chapter 1 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter2">
                 <span class="chapter-number">Chapter 2</span>
                 <h2>📈 Linear Regression</h2>
                 <p>
@@ -351,12 +393,12 @@
                     <strong>Key Takeaway:</strong> Linear regression provides interpretable models for continuous outcomes. Understanding its assumptions and limitations is crucial for proper application and serves as a stepping stone to more advanced techniques.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 2 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter2_linear_regression.ipynb" class="github-link">
+                    📓 View Chapter 2 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter3">
                 <span class="chapter-number">Chapter 3</span>
                 <h2>🎯 Classification</h2>
                 <p>
@@ -381,12 +423,12 @@
                     <strong>Key Takeaway:</strong> Classification methods extend regression concepts to categorical outcomes. The choice between methods depends on data characteristics and assumptions about class distributions.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 3 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter3_classification.ipynb" class="github-link">
+                    📓 View Chapter 3 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter4">
                 <span class="chapter-number">Chapter 4</span>
                 <h2>🔄 Resampling Methods</h2>
                 <p>
@@ -410,12 +452,12 @@
                     <strong>Key Takeaway:</strong> Resampling methods provide robust ways to estimate model performance and uncertainty. Cross-validation is particularly valuable for model selection and avoiding overfitting.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 4 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter4_resampling.ipynb" class="github-link">
+                    📓 View Chapter 4 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter5">
                 <span class="chapter-number">Chapter 5</span>
                 <h2>🎛️ Linear Model Selection and Regularization</h2>
                 <p>
@@ -440,12 +482,12 @@
                     <strong>Key Takeaway:</strong> Regularization methods help prevent overfitting and can improve model performance, especially with high-dimensional data. Ridge and Lasso provide different approaches to coefficient shrinkage.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 5 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter5_regularization.ipynb" class="github-link">
+                    📓 View Chapter 5 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter6">
                 <span class="chapter-number">Chapter 6</span>
                 <h2>🌳 Tree-based Methods</h2>
                 <p>
@@ -471,12 +513,12 @@
                     <strong>Key Takeaway:</strong> Tree-based methods excel at capturing non-linear relationships and interactions. Ensemble methods like Random Forest and boosting often provide state-of-the-art performance while maintaining reasonable interpretability.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 6 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter6_trees.ipynb" class="github-link">
+                    📓 View Chapter 6 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter7">
                 <span class="chapter-number">Chapter 7</span>
                 <h2>🛡️ Support Vector Machine</h2>
                 <p>
@@ -502,12 +544,12 @@
                     <strong>Key Takeaway:</strong> SVMs excel in high-dimensional spaces and with complex decision boundaries. The kernel trick allows linear methods to capture non-linear relationships effectively.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 7 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter7_svm.ipynb" class="github-link">
+                    📓 View Chapter 7 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter8">
                 <span class="chapter-number">Chapter 8</span>
                 <h2>🧠 Deep Learning</h2>
                 <p>
@@ -533,12 +575,12 @@
                     <strong>Key Takeaway:</strong> Deep learning excels at learning hierarchical representations from raw data. While powerful, these models require careful tuning and substantial computational resources.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 8 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter8_deep_learning.ipynb" class="github-link">
+                    📓 View Chapter 8 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter9">
                 <span class="chapter-number">Chapter 9</span>
                 <h2>🔍 Unsupervised Learning</h2>
                 <p>
@@ -563,12 +605,12 @@
                     <strong>Key Takeaway:</strong> Unsupervised learning reveals hidden patterns in data and is crucial for exploratory data analysis, data preprocessing, and feature engineering.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 9 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter9_unsupervised.ipynb" class="github-link">
+                    📓 View Chapter 9 Notebook
+                </a>
             </article>
             
-            <article class="chapter">
+            <article class="chapter" id="chapter10">
                 <span class="chapter-number">Chapter 10</span>
                 <h2>📝 Text Mining</h2>
                 <p>
@@ -594,9 +636,9 @@
                     <strong>Key Takeaway:</strong> Text mining transforms unstructured text into structured data suitable for machine learning. It's essential for natural language processing applications and social media analysis.
                 </div>
                 
-                <div class="highlight">
-                    <strong>📓 Notebook Status:</strong> Chapter 10 lab exercises to be uploaded to repository
-                </div>
+                <a href="https://github.com/Eugene01985/webscraping/blob/main/chapter10_text_mining.ipynb" class="github-link">
+                    📓 View Chapter 10 Notebook
+                </a>
             </article>
         </main>
         
@@ -731,5 +773,21 @@
             <p>📚 <strong>Remember:</strong> Understanding the theory behind each algorithm is as important as implementing it!</p>
         </footer>
     </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
